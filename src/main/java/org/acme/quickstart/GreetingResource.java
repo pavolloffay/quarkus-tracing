@@ -1,25 +1,34 @@
 package org.acme.quickstart;
 
 import javax.inject.Inject;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
 @Path("/")
-public class GreetingResource implements GreetingService {
+public class GreetingResource {
 
     @Inject
-    private ConversationService conversationService;
+    public ConversationService conversationService;
 
-    @Override
+    @GET
+    @Path("/hello")
+    @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
         return "hello";
     }
 
-    @Override
+    @GET
+    @Path("/bonjour")
+    @Produces(MediaType.TEXT_PLAIN)
     public String bonjour() {
         return "bonjour";
     }
 
-    @Override
+    @GET
+    @Path("/conversation")
+    @Produces(MediaType.TEXT_PLAIN)
     public String conversation() {
         return conversationService.talk();
     }
