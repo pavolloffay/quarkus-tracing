@@ -1,7 +1,7 @@
 # Quarkus Tracing Example
 
 ## Run
-Start Jaeger server so we can receive some traces from Quarkus
+Start Jaeger server so we can receive some traces from Quarkus:
 ```bash
 docker run -d --name jaeger \
   -p 5778:5778 \
@@ -11,7 +11,7 @@ docker run -d --name jaeger \
 
 ```
 
-Compile as a normal Java application
+Compile as a normal Java application:
 ```bash
 ./mvnw clean package
 java -jar target/tracing-example-1.0-SNAPSHOT-runner.jar
@@ -22,4 +22,11 @@ Refer to the Quarkus or GraalVM documentation how to install it.
 ```bash
 ./mvnw package -Pnative
 ./target/tracing-example-1.0-SNAPSHOT-runner
+```
+
+
+Execute request:
+```bash
+curl -ivX GET localhost:8080/hello
+curl -ivX GET localhost:8080/conversation
 ```
