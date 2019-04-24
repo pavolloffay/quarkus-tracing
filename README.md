@@ -1,5 +1,7 @@
 # Quarkus Tracing Example
 
+Example application for blog post https://medium.com/jaegertracing/microprofile-tracing-in-supersonic-subatomic-quarkus-43020f89a753
+
 ## Run
 Start Jaeger server so we can receive some traces from Quarkus:
 ```bash
