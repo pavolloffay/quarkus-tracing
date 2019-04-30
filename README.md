@@ -32,3 +32,5 @@ Execute request:
 curl -ivX GET localhost:8080/hello
 curl -ivX GET localhost:8080/conversation
 ```
+
+Navigate to http://localhost:16686/ to access the Jaeger UI.
