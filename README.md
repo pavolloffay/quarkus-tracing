@@ -5,12 +5,16 @@ Example application for blog post https://medium.com/jaegertracing/microprofile-
 ## Run
 Start Jaeger server so we can receive some traces from Quarkus:
 ```bash
-docker run -d --name jaeger \
+docker run --rm -it --name jaeger \
   -p 5778:5778 \
   -p 16686:16686 \
   -p 14268:14268 \
-  jaegertracing/all-in-one:1.11
+  jaegertracing/all-in-one:1.14
+```
 
+Development mode
+```bash
+./mvnw compile quarkus:dev
 ```
 
 Compile as a normal Java application:
@@ -25,7 +29,6 @@ Refer to the Quarkus or GraalVM documentation how to install it.
 ./mvnw package -Pnative
 ./target/tracing-example-1.0-SNAPSHOT-runner
 ```
-
 
 Execute request:
 ```bash

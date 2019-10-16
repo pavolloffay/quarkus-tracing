@@ -32,4 +32,11 @@ public class GreetingResource {
     public String conversation() {
         return conversationService.talk();
     }
+
+    @GET
+    @Path("/foo")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String foo() {
+        return "foo";
+    }
 }
