@@ -5,9 +5,13 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Path("/")
 public class GreetingResource {
+
+    private static final Logger LOG = LoggerFactory.getLogger(GreetingResource.class);
 
     @Inject
     public ConversationService conversationService;
@@ -16,6 +20,7 @@ public class GreetingResource {
     @Path("/hello")
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
+        LOG.info("hello");
         return "hello";
     }
 
