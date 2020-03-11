@@ -5,13 +5,12 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.jboss.logging.Logger;
 
 @Path("/")
 public class GreetingResource {
 
-    private static final Logger LOG = LoggerFactory.getLogger(GreetingResource.class);
+    private static final Logger LOG = Logger.getLogger(GreetingResource.class);
 
     @Inject
     public ConversationService conversationService;
